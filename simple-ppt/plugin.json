@@ -1,0 +1,7 @@
+{
+  "name": "simple-ppt",
+  "displayName": "simple-ppt",
+  "description": "将 Markdown 一键生成 960×540 商务风 HTML 幻灯片，支持逐页下载 PNG",
+  "version": "1.1.0",
+  "author": { "name": "www" }
+}
