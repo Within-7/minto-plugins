@@ -1,5 +1,5 @@
 ---
-name: ppt
+name: md-ppt
 description: "专业级Markdown到HTML PPT转换工具，严格遵循McKinsey/BCG级别的企业演示标准。具备智能内容识别、模块化生成、质量保证等核心能力。"
 tools: "*"
 model: glm-4.6
