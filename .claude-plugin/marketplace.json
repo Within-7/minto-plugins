@@ -1,0 +1,21 @@
+{
+  "name": "within7-plugins",
+  "metadata": {
+    "description": "Official Within7 plugin marketplace for Claude Code extensions",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "md-ppt",
+      "description": "将 Markdown 一键生成 960×540 商务风 HTML 幻灯片，支持逐页下载 PNG",
+      "version": "1.0.0",
+      "author": {
+        "name": "www",
+        "url": "https://github.com/Within-7"
+      },
+      "homepage": "https://github.com/Within-7/minto-plugins",
+      "tags": ["markdown", "ppt", "html", "png"],
+      "source": "./plugins/md-ppt"
+    }
+  ]
+}
