@@ -212,374 +212,249 @@
 ```
 
 ## CSS最佳实践
+以下是根据你提供的设计背景和视觉规范，**全面修改和优化后的 CSS 最佳实践 Prompt**，严格遵循你的配色方案、字体层级、布局结构和整体风格要求，适用于创建具有专业商务演示风格（如 McKinsey、BCG）的幻灯片或 Web 页面：
+
+---
+
+## CSS最佳实践（商务演示风格）
 
 ### 1. CSS架构和组织
 
-#### 文件结构
-```
-styles/
-├── base/
-│   ├── reset.css          # CSS重置
-│   ├── typography.css     # 字体基础
-│   └── variables.css      # CSS变量
-├── components/
-│   ├── buttons.css        # 按钮组件
-│   ├── slides.css         # 幻灯片组件
-│   └── navigation.css     # 导航组件
-├── layout/
-│   ├── grid.css           # 网格系统
-│   ├── header.css         # 页头布局
-│   └── footer.css         # 页脚布局
-├── utilities/
-│   ├── spacing.css        # 间距工具类
-│   ├── colors.css         # 颜色工具类
-│   └── accessibility.css  # 可访问性工具
-└── main.css               # 主样式文件
-```
-
-#### CSS自定义属性 (变量)
+#### CSS自定义属性（变量）——严格遵循设计规范
 ```css
-/* :root 中定义全局变量 */
 :root {
-  /* 颜色系统 */
-  --color-primary: #F85d42;
-  --color-primary-dark: #e54d32;
-  --color-primary-light: #fa7d65;
-  
-  --color-secondary: #556EE6;
-  --color-success: #34c38f;
-  --color-warning: #f1b44c;
-  --color-danger: #f46a6a;
-  
-  --color-dark: #000000;
-  --color-light: #ffffff;
-  --color-gray-100: #f8f9fa;
-  --color-gray-500: #74788d;
-  --color-gray-900: #212529;
-  
-  /* 字体系统 */
-  --font-family-primary: 'Arial', 'Helvetica Neue', sans-serif;
-  --font-family-mono: 'SF Mono', Monaco, Consolas, monospace;
-  
-  --font-size-xs: 0.75rem;    /* 12px */
-  --font-size-sm: 0.875rem;   /* 14px */
-  --font-size-base: 1rem;     /* 16px */
-  --font-size-lg: 1.125rem;   /* 18px */
+  /* === 核心配色（来自设计规范） === */
+  --color-bg-primary: #FFFFFF;        /* 主背景色 */
+  --color-header-bg: #000000;         /* 标题栏背景 */
+  --color-primary: #F85D42;           /* 主要强调色（橙色） */
+  --color-primary-dark: #E54D32;      /* 橙色深色变体（用于 hover） */
+  --color-primary-light: #FA7D65;     /* 橙色浅色变体 */
+
+  --color-gray-500: #74788d;          /* 辅助灰色 */
+  --color-gray-700: #4A4E5A;          /* 正文深灰 */
+  --color-gray-900: #212529;          /* 深黑色文本 */
+  --color-white: #FFFFFF;
+
+  /* === 辅助色系（用于图表、状态、图标等） === */
+  --color-brand-blue: #556EE6;        /* 深蓝色 */
+  --color-success: #34C38F;           /* 绿色 */
+  --color-info: #50A5F1;              /* 蓝色 */
+  --color-warning: #F1B44C;           /* 黄色 */
+
+  /* === 字体系统（语义化命名） === */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+  --font-size-xs: 0.75rem;    /* 12px - 图表标签 */
+  --font-size-sm: 0.875rem;   /* 14px - 正文小字、辅助信息 */
+  --font-size-base: 1rem;     /* 16px - 正文默认 */
+  --font-size-lg: 1.125rem;   /* 18px - 副标题 */
   --font-size-xl: 1.25rem;    /* 20px */
-  --font-size-2xl: 1.5rem;    /* 24px */
-  --font-size-3xl: 1.875rem;  /* 30px */
-  --font-size-4xl: 2.25rem;   /* 36px */
-  
-  /* 间距系统 */
+  --font-size-2xl: 1.5rem;    /* 24px - 小标题 */
+  --font-size-3xl: 1.875rem;  /* 30px - 大标题 */
+  --font-size-4xl: 2.25rem;   /* 36px - 封面主标题 */
+
+  /* === 间距系统（基于 8px 基准） === */
   --spacing-xs: 0.25rem;   /* 4px */
   --spacing-sm: 0.5rem;    /* 8px */
   --spacing-md: 1rem;      /* 16px */
   --spacing-lg: 1.5rem;    /* 24px */
   --spacing-xl: 2rem;      /* 32px */
   --spacing-2xl: 3rem;     /* 48px */
-  
-  /* 布局系统 */
-  --container-max-width: 1200px;
-  --slide-width: 960px;
-  --slide-height: 540px;
-  --header-height: 80px;
-  
-  /* 阴影系统 */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  
-  /* 动画系统 */
-  --transition-fast: 150ms ease-in-out;
-  --transition-normal: 250ms ease-in-out;
-  --transition-slow: 350ms ease-in-out;
-  
-  /* Z-index 系统 */
-  --z-dropdown: 1000;
-  --z-sticky: 1020;
-  --z-fixed: 1030;
-  --z-modal-backdrop: 1040;
-  --z-modal: 1050;
-  --z-popover: 1060;
-  --z-tooltip: 1070;
+
+  /* === 布局尺寸 === */
+  --header-height: 60px;              /* 标题栏高度 */
+  --slide-max-width: 960px;           /* 内容区域最大宽度 */
+  --card-border-radius: 8px;          /* 卡片圆角 */
+
+  /* === 阴影（用于卡片、强调框） === */
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-emphasis: 0 4px 12px rgba(248, 93, 66, 0.15); /* 橙色强调框 */
+
+  /* === 过渡与动画 === */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+
+  /* === Z-index 层级 === */
+  --z-header: 100;
+  --z-overlay: 1000;
 }
 ```
 
-### 2. 响应式设计
+---
 
-#### 移动优先的媒体查询
+### 2. 响应式设计（适配演示与阅读）
+
+#### 移动优先布局（适配投影与桌面）
 ```css
-/* 移动设备优先 (默认样式) */
 .slide-container {
-  width: 100%;
-  padding: var(--spacing-md);
+  background: var(--color-bg-primary);
+  max-width: var(--slide-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-lg);
 }
 
-/* 平板设备 */
+/* 平板及以上：增加留白 */
 @media (min-width: 768px) {
   .slide-container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: var(--spacing-lg);
-  }
-}
-
-/* 桌面设备 */
-@media (min-width: 1024px) {
-  .slide-container {
-    max-width: var(--container-max-width);
     padding: var(--spacing-xl);
   }
 }
 
-/* 大屏设备 */
-@media (min-width: 1440px) {
-  .slide-container {
-    max-width: 1400px;
-  }
-}
-```
-
-#### 容器查询 (现代浏览器)
-```css
-.slide-card {
-  container-type: inline-size;
-}
-
-@container (min-width: 400px) {
-  .slide-card__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-md);
-  }
-}
-
-@container (min-width: 600px) {
-  .slide-card__content {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-```
-
-### 3. 现代CSS特性
-
-#### CSS Grid 布局
-```css
-.slide-grid {
-  display: grid;
-  gap: var(--spacing-lg);
-  /* 自动列数 */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  /* 或固定列数 */
-  grid-template-columns: repeat(12, 1fr);
-}
-
-.slide-grid__item {
-  /* 跨列 */
-  grid-column: span 4;
-  
-  /* 跨行 */
-  grid-row: span 2;
-  
-  /* 命名网格线 */
-  grid-column: main-start / main-end;
-}
-
-/* 复杂布局示例 */
-.slide-layout {
-  display: grid;
-  grid-template-areas:
-    "header header header"
-    "nav content aside"
-    "footer footer footer";
-  grid-template-columns: 200px 1fr 200px;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
-}
-
-.slide-header { grid-area: header; }
-.slide-nav { grid-area: nav; }
-.slide-content { grid-area: content; }
-.slide-aside { grid-area: aside; }
-.slide-footer { grid-area: footer; }
-```
-
-#### Flexbox 布局
-```css
-.flex-container {
-  display: flex;
-  gap: var(--spacing-md);
-}
-
-/* 水平居中 */
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* 垂直布局 */
-.flex-column {
+/* 封面页居中 */
+.slide-cover {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  text-align: center;
 }
 
-/* 响应式 Flexbox */
-.flex-responsive {
+.slide-cover__title {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  color: var(--color-header-bg); /* 黑色文字 */
+  margin: 0;
+}
+```
+
+---
+
+### 3. 现代CSS特性应用（符合布局与视觉层次）
+
+#### 标题栏（黑色横条）
+```css
+.page-header {
+  background: var(--color-header-bg);
+  color: var(--color-white);
+  height: var(--header-height);
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-md);
+  align-items: center;
+  padding: 0 var(--spacing-md);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
 }
 
-.flex-responsive > * {
-  flex: 1 1 300px; /* 基础宽度300px，可伸缩 */
+.page-header__title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin: 0;
 }
 ```
 
-#### CSS 自定义属性动态应用
+#### 卡片式内容分区
 ```css
-/* 主题切换 */
-.theme-dark {
-  --color-bg-primary: #1a1a1a;
-  --color-bg-secondary: #2d2d2d;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #cccccc;
-}
-
-.theme-light {
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f8f9fa;
-  --color-text-primary: #212529;
-  --color-text-secondary: #6c757d;
-}
-
-.slide {
+.content-card {
   background: var(--color-bg-primary);
-  color: var(--color-text-primary);
-  transition: background var(--transition-normal);
+  border-radius: var(--card-border-radius);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.content-card--highlight {
+  border-left: 4px solid var(--color-primary);
+  box-shadow: var(--shadow-emphasis);
 }
 ```
 
-### 4. 性能优化
-
-#### CSS 优化技巧
+#### 强调文本与关键数据
 ```css
-/* 使用 transform 而不是改变位置属性 */
-.slide-transition {
-  /* 避免 left/top/margin */
-  transform: translateX(100px);
-  transition: transform var(--transition-normal);
+.text-highlight {
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
-/* 使用 opacity 和 transform 进行动画 */
-.slide-fade {
+.key-number {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+```
+
+#### 图表配色（与辅助色系对齐）
+```css
+.chart-bar--brand { fill: var(--color-brand-blue); }
+.chart-bar--success { fill: var(--color-success); }
+.chart-bar--info { fill: var(--color-info); }
+.chart-bar--warning { fill: var(--color-warning); }
+```
+
+---
+
+### 4. 性能与可访问性
+
+#### 高效动画（避免布局抖动）
+```css
+.slide-item {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(10px);
   transition: 
     opacity var(--transition-normal),
     transform var(--transition-normal);
 }
 
-.slide-fade.active {
+.slide-item.visible {
   opacity: 1;
   transform: translateY(0);
 }
+```
 
-/* contain 属性优化 */
-.slide-item {
-  contain: layout style paint;
-  /* 或使用更具体的 */
-  contain: content;
+#### 可访问性（焦点与对比度）
+```css
+a, button {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
-/* will-change 优化 */
-.slide-animated {
-  will-change: transform, opacity;
-}
-
-/* 使用 GPU 加速 */
-.gpu-accelerated {
-  transform: translateZ(0);
-  /* 或 */
-  backface-visibility: hidden;
+/* 确保文本对比度符合 WCAG */
+.text-body {
+  color: var(--color-gray-700);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
 }
 ```
 
-#### 关键CSS内联
-```css
-/* 首屏关键样式 */
-.critical-above-the-fold {
-  /* 首屏必需的样式 */
-  
-  .slide-header {
-    background: var(--color-primary);
-    color: white;
-    padding: var(--spacing-md);
-    text-align: center;
-  }
-  
-  .slide-title {
-    font-size: var(--font-size-2xl);
-    font-weight: bold;
-    margin: 0;
-  }
-}
-```
+---
 
-### 5. 可维护性和可扩展性
+### 5. 可维护性与风格一致性
 
-#### BEM 命名约定
+#### BEM 命名（贴合商务风格）
 ```css
-/* Block */
 .slide {}
-
-/* Element */
-.slide__header {}
+.slide__title {}
+.slide__subtitle { color: var(--color-primary); }
 .slide__content {}
 .slide__footer {}
 
-/* Modifier */
-.slide--fullscreen {}
-.slide--with-sidebar {}
-.slide--dark-theme {}
+/* 页面类型修饰符 */
+.slide--cover {}
+.slide--summary {}
+.slide--thank-you {}
 
-/* 复杂示例 */
-.presentation {}
-.presentation__slide {}
-.presentation__slide--active {}
-.presentation__slide--transitioning {}
-
-.presentation__controls {}
-.presentation__controls--disabled {}
-
-.presentation__button {}
-.presentation__button--primary {}
-.presentation__button--large {}
+/* 强调区域 */
+.highlight-box {}
+.highlight-box--orange { background: rgba(248, 93, 66, 0.08); }
+.highlight-box--blue { background: rgba(85, 110, 230, 0.08); }
 ```
 
-#### 组件化CSS
+#### 组件示例：专业按钮（用于交互控制）
 ```css
-/* 按钮组件 */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: var(--spacing-sm) var(--spacing-md);
-  border: none;
-  border-radius: 4px;
+  font-family: var(--font-family-sans);
   font-size: var(--font-size-base);
-  font-weight: 500;
-  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all var(--transition-fast);
-  min-height: 44px; /* 触摸友好 */
-}
-
-.btn:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  transition: background var(--transition-fast);
+  min-height: 40px;
 }
 
 .btn--primary {
@@ -590,23 +465,23 @@ styles/
 .btn--primary:hover {
   background: var(--color-primary-dark);
 }
-
-.btn--secondary {
-  background: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
-}
-
-.btn--large {
-  padding: var(--spacing-md) var(--spacing-lg);
-  font-size: var(--font-size-lg);
-}
-
-.btn--disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
 ```
+
+---
+
+### 6. 整体风格控制（确保McKinsey/BCG风格）
+
+- **所有文本**：使用无衬线字体（如 Arial, Helvetica, system-ui）
+- **标题层级**：
+  - 一级标题：`font-size: var(--font-size-3xl)`, `font-weight: 700`, `color: black`
+  - 二级标题：`font-size: var(--font-size-lg)`, `font-weight: 600`, `color: var(--color-primary)`
+- **视觉留白**：统一使用 `--spacing-md` 及以上间距
+- **无多余装饰**：避免阴影、渐变、边框过度使用，保持极简
+- **色彩克制**：仅在关键数据、强调区域使用橙色，其余使用灰/黑/白
+
+> ✅ **设计一致性检查**：所有页面必须复用相同变量、组件和间距系统，确保从封面到结束页风格统一。
+
+---
 
 ## 工具和资源
 
