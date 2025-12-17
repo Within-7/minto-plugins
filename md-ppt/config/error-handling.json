@@ -1,0 +1,625 @@
+{
+  "name": "error-handling",
+  "description": "错误处理和异常管理配置",
+  "version": "1.0.0",
+  "created": "2025-12-17T00:00:00.000Z",
+  "updated": "2025-12-17T00:00:00.000Z",
+  
+  "errorCategories": {
+    "content_parsing": {
+      "name": "内容解析错误",
+      "severity": "high",
+      "recoverable": true,
+      "retryable": true,
+      "maxRetries": 3,
+      "backoffMultiplier": 2,
+      "baseDelay": 1000
+    },
+    "template_rendering": {
+      "name": "模板渲染错误", 
+      "severity": "high",
+      "recoverable": true,
+      "retryable": true,
+      "maxRetries": 2,
+      "backoffMultiplier": 1.5,
+      "baseDelay": 500
+    },
+    "css_compilation": {
+      "name": "CSS编译错误",
+      "severity": "medium",
+      "recoverable": true,
+      "retryable": false,
+      "maxRetries": 1,
+      "backoffMultiplier": 1,
+      "baseDelay": 200
+    },
+    "responsive_design": {
+      "name": "响应式设计错误",
+      "severity": "medium",
+      "recoverable": false,
+      "retryable": false,
+      "maxRetries": 0,
+      "backoffMultiplier": 1,
+      "baseDelay": 0
+    },
+    "accessibility_violation": {
+      "name": "可访问性违规",
+      "severity": "medium",
+      "recoverable": true,
+      "retryable": false,
+      "maxRetries": 0,
+      "backoffMultiplier": 1,
+      "baseDelay": 0
+    },
+    "performance_threshold": {
+      "name": "性能阈值超标",
+      "severity": "low",
+      "recoverable": true,
+      "retryable": false,
+      "maxRetries": 0,
+      "backoffMultiplier": 1,
+      "baseDelay": 0
+    },
+    "cross_browser": {
+      "name": "跨浏览器兼容性问题",
+      "severity": "low",
+      "recoverable": false,
+      "retryable": false,
+      "maxRetries": 0,
+      "backoffMultiplier": 1,
+      "baseDelay": 0
+    }
+  },
+
+  "specificErrors": {
+    "invalid_markdown_syntax": {
+      "category": "content_parsing",
+      "code": "MD001",
+      "message": "Markdown语法无效",
+      "description": "输入的Markdown内容包含语法错误",
+      "examples": [
+        "未闭合的代码块",
+        "错误的列表格式",
+        "无效的链接格式"
+      ],
+      "recovery": {
+        "action": "attempt_repair",
+        "fallback": "plain_text",
+        "userAction": "检查Markdown格式"
+      },
+      "prevention": {
+        "validation": true,
+        "linting": true,
+        "examples": true
+      }
+    },
+    "missing_required_structure": {
+      "category": "content_parsing",
+      "code": "MD002",
+      "message": "缺少必需的内容结构",
+      "description": "内容缺少必要的标题或结构元素",
+      "examples": [
+        "缺少主标题",
+        "没有章节划分",
+        "内容层次混乱"
+      ],
+      "recovery": {
+        "action": "generate_structure",
+        "fallback": "auto_generate",
+        "userAction": "添加标题或重新组织内容"
+      },
+      "prevention": {
+        "validation": true,
+        "templates": true,
+        "guidance": true
+      }
+    },
+    "incompatible_format": {
+      "category": "content_parsing",
+      "code": "MD003",
+      "message": "内容格式不兼容",
+      "description": "输入内容格式不被支持",
+      "examples": [
+        "不支持的文件格式",
+        "编码问题",
+        "格式损坏"
+      ],
+      "recovery": {
+        "action": "format_conversion",
+        "fallback": "error_message",
+        "userAction": "检查文件格式或重新上传"
+      },
+      "prevention": {
+        "formatCheck": true,
+        "encoding": true,
+        "sizeLimit": true
+      }
+    },
+    "template_rendering_failure": {
+      "category": "template_rendering",
+      "code": "TPL001",
+      "message": "模板渲染失败",
+      "description": "PPT模板在渲染过程中发生错误",
+      "examples": [
+        "模板文件损坏",
+        "变量替换失败",
+        "循环引用"
+      ],
+      "recovery": {
+        "action": "fallback_template",
+        "fallback": "default_template",
+        "userAction": "检查模板文件或使用默认模板"
+      },
+      "prevention": {
+        "templateValidation": true,
+        "variableCheck": true,
+        "backupTemplate": true
+      }
+    },
+    "css_compilation_error": {
+      "category": "css_compilation",
+      "code": "CSS001",
+      "message": "CSS编译错误",
+      "description": "样式表编译过程中发生错误",
+      "examples": [
+        "语法错误",
+        "变量未定义",
+        "循环依赖"
+      ],
+      "recovery": {
+        "action": "use_fallback_styles",
+        "fallback": "minimal_styles",
+        "userAction": "检查CSS语法或使用简化样式"
+      },
+      "prevention": {
+        "syntaxCheck": true,
+        "variableValidation": true,
+        "dependencyCheck": true
+      }
+    },
+    "responsive_design_break": {
+      "category": "responsive_design",
+      "code": "RSP001",
+      "message": "响应式设计失效",
+      "description": "页面在不同设备上显示异常",
+      "examples": [
+        "移动端布局错乱",
+        "表格溢出",
+        "字体大小不当"
+      ],
+      "recovery": {
+        "action": "apply_mobile_fixes",
+        "fallback": "desktop_only",
+        "userAction": "调整响应式设置"
+      },
+      "prevention": {
+        "deviceTesting": true,
+        "viewportCheck": true,
+        "mediaQueryValidation": true
+      }
+    },
+    "accessibility_violation": {
+      "category": "accessibility_violation",
+      "code": "A11Y001",
+      "message": "可访问性标准违规",
+      "description": "不符合WCAG可访问性标准",
+      "examples": [
+        "颜色对比度不足",
+        "缺少alt属性",
+        "键盘导航问题"
+      ],
+      "recovery": {
+        "action": "auto_fix_accessibility",
+        "fallback": "warning_message",
+        "userAction": "手动修复可访问性问题"
+      },
+      "prevention": {
+        "a11yTesting": true,
+        "colorContrastCheck": true,
+        "keyboardNavigationTest": true
+      }
+    },
+    "performance_threshold_exceeded": {
+      "category": "performance_threshold",
+      "code": "PERF001",
+      "message": "性能指标超出阈值",
+      "description": "页面加载或运行性能不达标",
+      "examples": [
+        "文件过大",
+        "加载时间过长",
+        "渲染卡顿"
+      ],
+      "recovery": {
+        "action": "optimize_performance",
+        "fallback": "reduce_features",
+        "userAction": "优化资源或简化功能"
+      },
+      "prevention": {
+        "performanceMonitoring": true,
+        "resourceOptimization": true,
+        "lazyLoading": true
+      }
+    },
+    "cross_browser_compatibility_issue": {
+      "category": "cross_browser",
+      "code": "BROWSER001",
+      "message": "跨浏览器兼容性问题",
+      "description": "在某些浏览器上显示异常",
+      "examples": [
+        "IE不支持",
+        "Safari渲染差异",
+        "Firefox兼容性"
+      ],
+      "recovery": {
+        "action": "apply_polyfills",
+        "fallback": "browser_warning",
+        "userAction": "使用兼容的浏览器"
+      },
+      "prevention": {
+        "browserTesting": true,
+        "polyfillInclusion": true,
+        "fallbackSupport": true
+      }
+    }
+  },
+
+  "recoveryStrategies": {
+    "attempt_repair": {
+      "name": "尝试修复",
+      "description": "自动尝试修复检测到的问题",
+      "actions": [
+        "修复语法错误",
+        "补全缺失结构",
+        "清理格式问题"
+      ],
+      "successRate": 0.7,
+      "timeLimit": 5000
+    },
+    "fallback_template": {
+      "name": "备用模板",
+      "description": "使用预定义的备用模板",
+      "actions": [
+        "加载默认模板",
+        "保留核心内容",
+        "应用基础样式"
+      ],
+      "successRate": 0.95,
+      "timeLimit": 2000
+    },
+    "generate_structure": {
+      "name": "生成结构",
+      "description": "自动生成缺失的内容结构",
+      "actions": [
+        "分析内容类型",
+        "生成合理标题",
+        "组织内容层次"
+      ],
+      "successRate": 0.8,
+      "timeLimit": 3000
+    },
+    "format_conversion": {
+      "name": "格式转换",
+      "description": "将内容转换为支持格式",
+      "actions": [
+        "检测原始格式",
+        "转换为Markdown",
+        "清理无效字符"
+      ],
+      "successRate": 0.6,
+      "timeLimit": 4000
+    },
+    "auto_fix_accessibility": {
+      "name": "自动修复可访问性",
+      "description": "自动修复可访问性问题",
+      "actions": [
+        "调整颜色对比度",
+        "添加缺失属性",
+        "优化键盘导航"
+      ],
+      "successRate": 0.5,
+      "timeLimit": 3000
+    },
+    "optimize_performance": {
+      "name": "性能优化",
+      "description": "优化资源加载和渲染性能",
+      "actions": [
+        "压缩图片",
+        "合并CSS/JS",
+        "启用懒加载"
+      ],
+      "successRate": 0.8,
+      "timeLimit": 6000
+    }
+  },
+
+  "fallbackOptions": {
+    "plain_text": {
+      "name": "纯文本模式",
+      "description": "将内容转换为纯文本格式",
+      "features": [
+        "基本文本显示",
+        "简单格式",
+        "无样式"
+      ]
+    },
+    "default_template": {
+      "name": "默认模板",
+      "description": "使用系统默认模板",
+      "features": [
+        "标准布局",
+        "基础样式",
+        "基本交互"
+      ]
+    },
+    "minimal_styles": {
+      "name": "最简样式",
+      "description": "应用最基础的样式",
+      "features": [
+        "必要格式",
+        "可读性保证",
+        "响应式支持"
+      ]
+    },
+    "desktop_only": {
+      "name": "仅桌面版",
+      "description": "只支持桌面设备",
+      "features": [
+        "完整功能",
+        "固定布局",
+        "桌面优化"
+      ]
+    },
+    "error_message": {
+      "name": "错误提示",
+      "description": "显示错误信息给用户",
+      "features": [
+        "错误详情",
+        "解决建议",
+        "联系方式"
+      ]
+    },
+    "warning_message": {
+      "name": "警告提示",
+      "description": "显示警告信息但继续执行",
+      "features": [
+        "警告详情",
+        "影响说明",
+        "继续执行"
+      ]
+    }
+  },
+
+  "userActions": {
+    "check_format": {
+      "name": "检查格式",
+      "description": "用户需要检查并修正内容格式",
+      "instructions": [
+        "验证Markdown语法",
+        "检查编码格式",
+        "确认文件完整性"
+      ],
+      "helpLinks": [
+        "Markdown语法指南",
+        "格式验证工具",
+        "常见问题解答"
+      ]
+    },
+    "use_default": {
+      "name": "使用默认",
+      "description": "用户可以选择使用默认模板或设置",
+      "instructions": [
+        "选择默认模板",
+        "接受基本样式",
+        "继续生成过程"
+      ],
+      "helpLinks": [
+        "模板预览",
+        "样式说明",
+        "功能对比"
+      ]
+    },
+    "adjust_settings": {
+      "name": "调整设置",
+      "description": "用户需要调整相关设置",
+      "instructions": [
+        "修改配置选项",
+        "更新模板设置",
+        "重新生成"
+      ],
+      "helpLinks": [
+        "设置指南",
+        "配置说明",
+        "最佳实践"
+      ]
+    }
+  },
+
+  "preventionMeasures": {
+    "validation": {
+      "name": "输入验证",
+      "description": "在处理前验证输入内容",
+      "checks": [
+        "格式验证",
+        "大小检查",
+        "编码检测",
+        "结构分析"
+      ]
+    },
+    "linting": {
+      "name": "代码检查",
+      "description": "使用linter检查内容质量",
+      "tools": [
+        "Markdown Linter",
+        "CSS Validator",
+        "HTML Validator"
+      ]
+    },
+    "templates": {
+      "name": "模板管理",
+      "description": "提供和管理高质量的模板",
+      "features": [
+        "模板验证",
+        "版本控制",
+        "备份机制"
+      ]
+    },
+    "testing": {
+      "name": "质量测试",
+      "description": "全面的测试覆盖",
+      "types": [
+        "单元测试",
+        "集成测试",
+        "浏览器测试",
+        "性能测试"
+      ]
+    }
+  },
+
+  "notificationSettings": {
+    "error": {
+      "level": "error",
+      "showToUser": true,
+      "logToConsole": true,
+      "sendToServer": true,
+      "createTicket": true,
+      "autoRetry": true,
+      "escalation": {
+        "enabled": true,
+        "threshold": 3,
+        "contact": ["admin", "developer"]
+      }
+    },
+    "warning": {
+      "level": "warning",
+      "showToUser": true,
+      "logToConsole": true,
+      "sendToServer": true,
+      "createTicket": false,
+      "autoRetry": false,
+      "escalation": {
+        "enabled": false,
+        "threshold": 5,
+        "contact": []
+      }
+    },
+    "info": {
+      "level": "info",
+      "showToUser": false,
+      "logToConsole": true,
+      "sendToServer": false,
+      "createTicket": false,
+      "autoRetry": false,
+      "escalation": {
+        "enabled": false,
+        "threshold": 0,
+        "contact": []
+      }
+    }
+  },
+
+  "logging": {
+    "enabled": true,
+    "level": "info",
+    "format": "json",
+    "destinations": [
+      {
+        "type": "console",
+        "enabled": true,
+        "format": "colored"
+      },
+      {
+        "type": "file",
+        "enabled": true,
+        "path": "./logs/errors.log",
+        "maxSize": "10MB",
+        "rotation": "daily"
+      },
+      {
+        "type": "server",
+        "enabled": true,
+        "endpoint": "/api/logs",
+        "batchSize": 10,
+        "retryAttempts": 3
+      }
+    ],
+    "fields": [
+      "timestamp",
+      "level",
+      "code",
+      "message",
+      "category",
+      "userId",
+      "sessionId",
+      "context",
+      "stack"
+    ]
+  },
+
+  "monitoring": {
+    "enabled": true,
+    "metrics": [
+      "error_rate",
+      "recovery_rate",
+      "user_satisfaction",
+      "performance_impact"
+    ],
+    "alerts": [
+      {
+        "name": "High Error Rate",
+        "condition": "error_rate > 0.1",
+        "severity": "high",
+        "notification": ["email", "slack"]
+      },
+      {
+        "name": "Low Recovery Rate", 
+        "condition": "recovery_rate < 0.5",
+        "severity": "medium",
+        "notification": ["slack"]
+      }
+    ],
+    "dashboard": {
+      "enabled": true,
+      "refresh": 30,
+      "retention": "30d"
+    }
+  },
+
+  "integration": {
+    "ticketing": {
+      "enabled": true,
+      "system": "jira",
+      "project": "PPT-GEN",
+      "priorityMapping": {
+        "high": "Highest",
+        "medium": "High", 
+        "low": "Medium"
+      }
+    },
+    "notification": {
+      "email": {
+        "enabled": true,
+        "templates": ["error", "recovery", "escalation"]
+      },
+      "slack": {
+        "enabled": true,
+        "channel": "#ppt-generator-alerts",
+        "webhook": "https://hooks.slack.com/..."
+      }
+    }
+  },
+
+  "experimental": {
+    "ml_error_detection": {
+      "enabled": false,
+      "model": "error_classifier_v2",
+      "confidence": 0.8,
+      "auto_fix": true
+    },
+    "predictive_error_handling": {
+      "enabled": false,
+      "lookback": 100,
+      "threshold": 0.05,
+      "preventive_action": true
+    }
+  }
+}

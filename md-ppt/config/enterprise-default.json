@@ -1,0 +1,695 @@
+{
+  "name": "enterprise-default",
+  "description": "企业级默认配置模板，适用于大多数商务演示场景",
+  "version": "1.0.0",
+  "created": "2025-12-17T00:00:00.000Z",
+  "updated": "2025-12-17T00:00:00.000Z",
+  "author": "PPT Generator System",
+  "category": "presentation",
+  "tags": ["enterprise", "business", "professional", "default"],
+  
+  "colors": {
+    "primary": {
+      "name": "企业橙",
+      "value": "#F85d42",
+      "description": "主要品牌色，用于关键强调和交互元素",
+      "variants": {
+        "50": "#fff7ed",
+        "100": "#ffedd5",
+        "200": "#fed7aa",
+        "300": "#fdba74",
+        "400": "#fb923c",
+        "500": "#F85d42",
+        "600": "#ea580c",
+        "700": "#c2410c",
+        "800": "#9a3412",
+        "900": "#7c2d12"
+      },
+      "usage": {
+        "buttons": true,
+        "highlights": true,
+        "dataEmphasis": true,
+        "background": false
+      }
+    },
+    "secondary": {
+      "name": "深蓝色",
+      "value": "#556EE6",
+      "description": "次要品牌色，用于次级强调和辅助信息",
+      "variants": {
+        "50": "#eff6ff",
+        "100": "#dbeafe",
+        "200": "#bfdbfe",
+        "300": "#93c5fd",
+        "400": "#60a5fa",
+        "500": "#556EE6",
+        "600": "#3b82f6",
+        "700": "#2563eb",
+        "800": "#1d4ed8",
+        "900": "#1e40af"
+      },
+      "usage": {
+        "links": true,
+        "subtitles": true,
+        "charts": true,
+        "background": false
+      }
+    },
+    "success": {
+      "name": "成功绿",
+      "value": "#34c38f",
+      "description": "成功状态色，用于正面数据和增长指标",
+      "variants": {
+        "50": "#ecfdf5",
+        "100": "#d1fae5",
+        "200": "#a7f3d0",
+        "300": "#6ee7b7",
+        "400": "#34d399",
+        "500": "#34c38f",
+        "600": "#10b981",
+        "700": "#059669",
+        "800": "#047857",
+        "900": "#065f46"
+      },
+      "usage": {
+        "positiveData": true,
+        "growthMetrics": true,
+        "successStates": true,
+        "background": false
+      }
+    },
+    "warning": {
+      "name": "警告黄",
+      "value": "#f1b44c",
+      "description": "警告状态色，用于注意和提醒信息",
+      "variants": {
+        "50": "#fffbeb",
+        "100": "#fef3c7",
+        "200": "#fde68a",
+        "300": "#fcd34d",
+        "400": "#fbbf24",
+        "500": "#f1b44c",
+        "600": "#f59e0b",
+        "700": "#d97706",
+        "800": "#b45309",
+        "900": "#92400e"
+      },
+      "usage": {
+        "warnings": true,
+        "attention": true,
+        "neutralData": true,
+        "background": false
+      }
+    },
+    "info": {
+      "name": "信息蓝",
+      "value": "#50a5f1",
+      "description": "信息状态色，用于中性信息和通知",
+      "variants": {
+        "50": "#eff6ff",
+        "100": "#dbeafe",
+        "200": "#bfdbfe",
+        "300": "#93c5fd",
+        "400": "#60a5fa",
+        "500": "#50a5f1",
+        "600": "#3b82f6",
+        "700": "#2563eb",
+        "800": "#1d4ed8",
+        "900": "#1e40af"
+      },
+      "usage": {
+        "information": true,
+        "neutralData": true,
+        "secondaryLinks": true,
+        "background": false
+      }
+    },
+    "error": {
+      "name": "错误红",
+      "value": "#f46a6a",
+      "description": "错误状态色，用于错误和负向数据",
+      "variants": {
+        "50": "#fef2f2",
+        "100": "#fee2e2",
+        "200": "#fecaca",
+        "300": "#fca5a5",
+        "400": "#f87171",
+        "500": "#f46a6a",
+        "600": "#ef4444",
+        "700": "#dc2626",
+        "800": "#b91c1c",
+        "900": "#991b1b"
+      },
+      "usage": {
+        "errors": true,
+        "negativeData": true,
+        "danger": true,
+        "background": false
+      }
+    },
+    "dark": {
+      "name": "深色",
+      "value": "#000000",
+      "description": "主要文本色和深色背景",
+      "variants": {
+        "50": "#f8fafc",
+        "100": "#f1f5f9",
+        "200": "#e2e8f0",
+        "300": "#cbd5e1",
+        "400": "#94a3b8",
+        "500": "#64748b",
+        "600": "#475569",
+        "700": "#334155",
+        "800": "#1e293b",
+        "900": "#000000"
+      },
+      "usage": {
+        "text": true,
+        "background": true,
+        "borders": true,
+        "highlights": false
+      }
+    },
+    "light": {
+      "name": "白色",
+      "value": "#FFFFFF",
+      "description": "主要背景色和浅色文本",
+      "usage": {
+        "background": true,
+        "text": false,
+        "borders": false,
+        "highlights": false
+      }
+    },
+    "gray": {
+      "name": "中性灰",
+      "value": "#74788d",
+      "description": "辅助文本和分隔线颜色",
+      "variants": {
+        "50": "#f8fafc",
+        "100": "#f1f5f9",
+        "200": "#e2e8f0",
+        "300": "#cbd5e1",
+        "400": "#94a3b8",
+        "500": "#74788d",
+        "600": "#64748b",
+        "700": "#475569",
+        "800": "#334155",
+        "900": "#1e293b"
+      },
+      "usage": {
+        "secondaryText": true,
+        "borders": true,
+        "disabled": true,
+        "background": false
+      }
+    }
+  },
+
+  "typography": {
+    "fontFamilies": {
+      "primary": {
+        "name": "Arial",
+        "value": "'Arial', 'Helvetica Neue', sans-serif",
+        "fallback": "sans-serif",
+        "description": "主要字体族，用于标题和正文"
+      },
+      "secondary": {
+        "name": "Helvetica Neue",
+        "value": "'Helvetica Neue', Arial, sans-serif",
+        "fallback": "sans-serif",
+        "description": "次要字体族，用于特殊强调"
+      },
+      "monospace": {
+        "name": "SF Mono",
+        "value": "'SF Mono', Monaco, Consolas, monospace",
+        "fallback": "monospace",
+        "description": "等宽字体，用于代码和数据"
+      }
+    },
+    "fontSizes": {
+      "xs": {
+        "value": "0.75rem",
+        "px": 12,
+        "description": "极小文字，用于注释和标签"
+      },
+      "sm": {
+        "value": "0.875rem",
+        "px": 14,
+        "description": "小文字，用于辅助信息"
+      },
+      "base": {
+        "value": "1rem",
+        "px": 16,
+        "description": "基础文字，用于正文内容"
+      },
+      "lg": {
+        "value": "1.125rem",
+        "px": 18,
+        "description": "大文字，用于重要正文"
+      },
+      "xl": {
+        "value": "1.25rem",
+        "px": 20,
+        "description": "特大文字，用于小标题"
+      },
+      "2xl": {
+        "value": "1.5rem",
+        "px": 24,
+        "description": "2倍文字，用于副标题"
+      },
+      "3xl": {
+        "value": "1.875rem",
+        "px": 30,
+        "description": "3倍文字，用于主标题"
+      },
+      "4xl": {
+        "value": "2.25rem",
+        "px": 36,
+        "description": "4倍文字，用于大标题"
+      },
+      "5xl": {
+        "value": "3rem",
+        "px": 48,
+        "description": "5倍文字，用于特大标题"
+      }
+    },
+    "fontWeights": {
+      "light": {
+        "value": 300,
+        "description": "轻字体，用于精细排版"
+      },
+      "normal": {
+        "value": 400,
+        "description": "正常字体，用于正文"
+      },
+      "medium": {
+        "value": 500,
+        "description": "中等字体，用于强调"
+      },
+      "semibold": {
+        "value": 600,
+        "description": "半粗字体，用于小标题"
+      },
+      "bold": {
+        "value": 700,
+        "description": "粗字体，用于标题"
+      },
+      "extrabold": {
+        "value": 800,
+        "description": "特粗字体，用于特殊强调"
+      }
+    },
+    "lineHeights": {
+      "tight": {
+        "value": 1.25,
+        "description": "紧密行高，用于紧凑排版"
+      },
+      "normal": {
+        "value": 1.5,
+        "description": "正常行高，用于正文"
+      },
+      "relaxed": {
+        "value": 1.75,
+        "description": "宽松行高，用于标题"
+      },
+      "loose": {
+        "value": 2,
+        "description": "非常宽松，用于特殊排版"
+      }
+    }
+  },
+
+  "layout": {
+    "dimensions": {
+      "slideWidth": {
+        "value": 960,
+        "unit": "px",
+        "description": "幻灯片标准宽度"
+      },
+      "slideHeight": {
+        "value": 540,
+        "unit": "px",
+        "description": "幻灯片标准高度"
+      },
+      "aspectRatio": {
+        "value": "16:9",
+        "description": "幻灯片宽高比"
+      },
+      "headerHeight": {
+        "value": 80,
+        "unit": "px",
+        "description": "标题区域高度"
+      },
+      "footerHeight": {
+        "value": 60,
+        "unit": "px",
+        "description": "页脚区域高度"
+      },
+      "contentArea": {
+        "value": 400,
+        "unit": "px",
+        "description": "内容区域高度 (540 - 80 - 60)"
+      }
+    },
+    "spacing": {
+      "xs": {
+        "value": "0.25rem",
+        "px": 4,
+        "description": "极小间距"
+      },
+      "sm": {
+        "value": "0.5rem",
+        "px": 8,
+        "description": "小间距"
+      },
+      "md": {
+        "value": "1rem",
+        "px": 16,
+        "description": "中等间距"
+      },
+      "lg": {
+        "value": "1.5rem",
+        "px": 24,
+        "description": "大间距"
+      },
+      "xl": {
+        "value": "2rem",
+        "px": 32,
+        "description": "特大间距"
+      },
+      "2xl": {
+        "value": "3rem",
+        "px": 48,
+        "description": "超大间距"
+      },
+      "contentPadding": {
+        "value": 40,
+        "unit": "px",
+        "description": "内容区域内边距"
+      },
+      "cardBorderRadius": {
+        "value": 8,
+        "unit": "px",
+        "description": "卡片圆角半径"
+      },
+      "gridGap": {
+        "value": 24,
+        "unit": "px",
+        "description": "网格间距"
+      }
+    },
+    "grid": {
+      "columns": {
+        "value": 12,
+        "description": "网格系统列数"
+      },
+      "gutter": {
+        "value": 24,
+        "unit": "px",
+        "description": "网格间距"
+      },
+      "maxWidth": {
+        "value": 1200,
+        "unit": "px",
+        "description": "最大内容宽度"
+      }
+    },
+    "breakpoints": {
+      "mobile": {
+        "value": 768,
+        "unit": "px",
+        "description": "移动设备断点"
+      },
+      "tablet": {
+        "value": 1024,
+        "unit": "px",
+        "description": "平板设备断点"
+      },
+      "desktop": {
+        "value": 1440,
+        "unit": "px",
+        "description": "桌面设备断点"
+      }
+    }
+  },
+
+  "components": {
+    "slide": {
+      "background": {
+        "default": "#FFFFFF",
+        "dark": "#1a1a1a",
+        "accent": "#f8fafc"
+      },
+      "border": {
+        "width": {
+          "value": 1,
+          "unit": "px"
+        },
+        "color": "#e2e8f0",
+        "radius": {
+          "value": 8,
+          "unit": "px"
+        }
+      },
+      "shadow": {
+        "default": "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+        "hover": "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+        "active": "0 20px 25px -5px rgba(0, 0, 0, 0.1)"
+      }
+    },
+    "header": {
+      "background": "#000000",
+      "textColor": "#FFFFFF",
+      "height": 80,
+      "padding": "20px 40px",
+      "title": {
+        "fontSize": "2xl",
+        "fontWeight": "bold",
+        "textAlign": "center"
+      }
+    },
+    "content": {
+      "padding": "40px",
+      "maxWidth": "880px",
+      "textAlign": "left"
+    },
+    "card": {
+      "background": "#FFFFFF",
+      "border": {
+        "width": 1,
+        "color": "#e0e0e0"
+      },
+      "borderRadius": 8,
+      "padding": 24,
+      "margin": "16px 0",
+      "shadow": "0 2px 4px rgba(0,0,0,0.1)"
+    },
+    "navigation": {
+      "position": "fixed",
+      "bottom": 20,
+      "background": "rgba(255, 255, 255, 0.95)",
+      "borderRadius": 25,
+      "padding": "12px 20px",
+      "gap": 16,
+      "button": {
+        "padding": "8px 16px",
+        "borderRadius": 6,
+        "background": "#F85d42",
+        "color": "#FFFFFF",
+        "fontSize": "14px",
+        "transition": "background 0.3s ease"
+      }
+    }
+  },
+
+  "animation": {
+    "transitions": {
+      "fast": {
+        "duration": 150,
+        "easing": "ease-in-out"
+      },
+      "normal": {
+        "duration": 250,
+        "easing": "ease-in-out"
+      },
+      "slow": {
+        "duration": 350,
+        "easing": "ease-in-out"
+      }
+    },
+    "slideTransitions": {
+      "fadeIn": {
+        "name": "fade-in",
+        "duration": 0.5,
+        "easing": "ease-in-out"
+      },
+      "slideIn": {
+        "name": "slide-in",
+        "duration": 0.6,
+        "easing": "ease-out"
+      },
+      "scaleIn": {
+        "name": "scale-in",
+        "duration": 0.4,
+        "easing": "ease-out"
+      }
+    },
+    "hoverEffects": {
+      "scale": {
+        "value": 1.05,
+        "duration": 200
+      },
+      "brightness": {
+        "value": 1.1,
+        "duration": 150
+      }
+    }
+  },
+
+  "accessibility": {
+    "contrast": {
+      "minimum": {
+        "normal": 4.5,
+        "large": 3
+      },
+      "enhanced": {
+        "normal": 7,
+        "large": 4.5
+      }
+    },
+    "focus": {
+      "outline": {
+        "width": 2,
+        "color": "#F85d42",
+        "offset": 2
+      }
+    },
+    "screenReader": {
+      "only": "sr-only",
+      "skipLink": "skip-link"
+    },
+    "keyboard": {
+      "tabIndex": {
+        "focusable": 0,
+        "disabled": -1
+      },
+      "shortcuts": {
+        "nextSlide": "ArrowRight",
+        "prevSlide": "ArrowLeft",
+        "download": "d",
+        "fullscreen": "f"
+      }
+    }
+  },
+
+  "performance": {
+    "optimization": {
+      "imageCompression": true,
+      "cssMinification": true,
+      "jsMinification": true,
+      "lazyLoading": true,
+      "criticalCSS": true
+    },
+    "limits": {
+      "maxFileSize": "2MB",
+      "maxLoadTime": "3s",
+      "maxSlides": 50,
+      "maxImagesPerSlide": 5
+    },
+    "caching": {
+      "enabled": true,
+      "duration": "1h",
+      "strategy": "cache-first"
+    }
+  },
+
+  "features": {
+    "navigation": {
+      "enabled": true,
+      "controls": ["previous", "next", "download", "fullscreen"],
+      "keyboard": true,
+      "touch": true
+    },
+    "download": {
+      "enabled": true,
+      "formats": ["png", "jpg"],
+      "quality": "high",
+      "resolution": {
+        "width": 1920,
+        "height": 1080
+      }
+    },
+    "fullscreen": {
+      "enabled": true,
+      "controls": true,
+      "autoHide": true,
+      "hideDelay": 3000
+    },
+    "responsive": {
+      "enabled": true,
+      "breakpoints": ["mobile", "tablet", "desktop"],
+      "scaling": true
+    }
+  },
+
+  "validation": {
+    "content": {
+      "maxTitleLength": 60,
+      "maxContentLength": 500,
+      "requiredElements": ["title"],
+      "allowedTags": ["h1", "h2", "h3", "p", "ul", "ol", "li", "table", "img", "a"],
+      "maxFileSize": "5MB"
+    },
+    "design": {
+      "colorContrastMin": 4.5,
+      "fontScaleConsistency": true,
+      "spacingConsistency": true,
+      "brandColorUsage": true
+    },
+    "technical": {
+      "html5Semantic": true,
+      "cssModular": true,
+      "responsiveDesign": true,
+      "crossBrowser": true,
+      "accessibilityWCAG": "AA"
+    }
+  },
+
+  "customization": {
+    "allowed": {
+      "colors": true,
+      "fonts": true,
+      "layout": true,
+      "animations": true
+    },
+    "restricted": {
+      "coreStructure": false,
+      "accessibility": false,
+      "performance": false
+    },
+    "presets": [
+      "minimal",
+      "corporate",
+      "creative",
+      "technical"
+    ]
+  },
+
+  "metadata": {
+    "schema": "https://ppt-generator.example.com/schema/v1",
+    "compatibility": {
+      "browsers": ["Chrome 90+", "Firefox 88+", "Safari 14+", "Edge 90+"],
+      "devices": ["desktop", "tablet", "mobile"]
+    },
+    "dependencies": [
+      {
+        "name": "html2canvas",
+        "version": "^1.4.0",
+        "url": "https://html2canvas.hertzen.com/dist/html2canvas.min.js"
+      }
+    ],
+    "license": "MIT",
+    "copyright": "© 2025 PPT Generator System"
+  }
+}
