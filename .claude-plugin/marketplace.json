@@ -19,7 +19,7 @@
       },
       "homepage": "https://github.com/Within-7/minto-plugins",
       "tags": ["markdown", "ppt", "html", "png"],
-      "source": "../plugins/md-ppt"
+      "source": "../md-ppt"
     }
   ]
 }
