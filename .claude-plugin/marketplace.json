@@ -20,6 +20,18 @@
       "homepage": "https://github.com/Within-7/minto-plugins",
       "tags": ["markdown", "ppt", "html", "png"],
       "source": "./md-ppt"
+    },
+    {
+      "name": "markdown-ppt-generator",
+      "source": "./generate-ppt",
+      "description": "Professional Markdown to HTML PPT converter with McKinsey/BCG-level design standards",
+      "version": "1.0.0",
+      "author": {
+        "name": "PPT Tools Team"
+      },
+      "category": "productivity",
+      "tags": ["presentation", "markdown", "html", "slides"],
+      "keywords": ["ppt", "presentation", "converter", "markdown", "html"]
     }
   ]
 }

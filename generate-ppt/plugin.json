@@ -1,0 +1,14 @@
+{
+  "name": "markdown-ppt-generator",
+  "version": "1.0.0",
+  "description": "Professional Markdown to HTML PPT converter with McKinsey/BCG-level design standards. Automatically converts markdown content to high-quality HTML presentations with download functionality.",
+  "author": {
+    "name": "Claude Code Plugin Developer",
+    "email": "developer@example.com"
+  },
+  "license": "MIT",
+  "keywords": ["markdown", "ppt", "presentation", "html", "converter", "slides"],
+  "commands": ["./commands/generate-ppt.md"],
+  "skills": ["./skills/markdown-ppt-converter"],
+  "agents": ["./agents/ppt-designer.md"]
+}

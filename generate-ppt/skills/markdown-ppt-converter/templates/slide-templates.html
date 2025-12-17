@@ -1,0 +1,187 @@
+
+<!-- Cover Slide Template -->
+<div class="ppt-slide cover-slide" id="slide-{{slide_number}}">
+    <div class="slide-header">
+        <h1 class="slide-title">{{TITLE}}</h1>
+        <div class="slide-subtitle">{{SUBTITLE}}</div>
+    </div>
+    <div class="slide-content centered">
+        <div class="cover-content">
+            <h2 class="cover-subtitle">{{PRESENTATION_SUBTITLE}}</h2>
+            <div class="cover-meta">
+                <p class="cover-date">{{DATE}}</p>
+                <p class="cover-author">{{AUTHOR}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Table of Contents Slide Template -->
+<div class="ppt-slide toc-slide" id="slide-{{slide_number}}">
+    <div class="slide-header">
+        <h1 class="slide-title">目录</h1>
+    </div>
+    <div class="slide-content">
+        <div class="toc-content">
+            <ol class="toc-list">
+                {{TOC_ITEMS}}
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- Content Slide Template -->
+<div class="ppt-slide content-slide" id="slide-{{slide_number}}">
+    <div class="slide-header">
+        <h1 class="slide-title">{{SLIDE_TITLE}}</h1>
+    </div>
+    <div class="slide-content">
+        <div class="content-main">
+            {{SLIDE_CONTENT}}
+        </div>
+    </div>
+</div>
+
+<!-- Two Column Slide Template -->
+<div class="ppt-slide two-column-slide" id="slide-{{slide_number}}">
+    <div class="slide-header">
+        <h1 class="slide-title">{{SLIDE_TITLE}}</h1>
+    </div>
+    <div class="slide-content">
+        <div class="content-grid two-column">
+            <div class="column-left">
+                {{LEFT_CONTENT}}
+            </div>
+            <div class="column-right">
+                {{RIGHT_CONTENT}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chart Slide Template -->
+<div class="ppt-slide chart-slide" id="slide-{{slide_number}}">
+    <div class="slide-header">
+        <h1 class="slide-title">{{CHART_TITLE}}</h1>
+    </div>
+    <div class="slide-content">
+        <div class="chart-container">
+            <h3 class="chart-subtitle">{{CHART_SUBTITLE}}</h3>
+            <div class="chart-area">
+                {{CHART_CONTENT}}
+            </div>
+            <div class="chart-legend">
+                {{CHART_LEGEND}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Data Table Slide Template -->
+<div class="ppt-slide table-slide" id="slide-{{slide_number}}">
+    <div class="slide-header">
+        <h1 class="slide-title">{{TABLE_TITLE}}</h1>
+    </div>
+    <div class="slide-content">
+        <div class="table-container">
+            <div class="table-wrapper">
+                {{TABLE_CONTENT}}
+            </div>
+            <div class="table-notes">
+                {{TABLE_NOTES}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Process Flow Slide Template -->
+<div class="ppt-slide process-slide" id="slide-{{slide_number}}">
+    <div class="slide-header">
+        <h1 class="slide-title">{{PROCESS_TITLE}}</h1>
+    </div>
+    <div class="slide-content">
+        <div class="process-container">
+            <div class="process-flow">
+                {{PROCESS_STEPS}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Comparison Slide Template -->
+<div class="ppt-slide comparison-slide" id="slide-{{slide_number}}">
+    <div class="slide-header">
+        <h1 class="slide-title">{{COMPARISON_TITLE}}</h1>
+    </div>
+    <div class="slide-content">
+        <div class="comparison-container">
+            <div class="comparison-grid">
+                {{COMPARISON_CONTENT}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Conclusion Slide Template -->
+<div class="ppt-slide conclusion-slide" id="slide-{{slide_number}}">
+    <div class="slide-header">
+        <h1 class="slide-title">{{CONCLUSION_TITLE}}</h1>
+    </div>
+    <div class="slide-content">
+        <div class="conclusion-main">
+            <div class="key-points">
+                {{KEY_POINTS}}
+            </div>
+            <div class="next-steps">
+                {{NEXT_STEPS}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End/Thank You Slide Template -->
+<div class="ppt-slide end-slide" id="slide-{{slide_number}}">
+    <div class="slide-content centered">
+        <div class="end-content">
+            <h1 class="thank-you">谢谢</h1>
+            <div class="end-subtitle">{{END_SUBTITLE}}</div>
+            <div class="contact-info">
+                {{CONTACT_INFO}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Image Focus Slide Template -->
+<div class="ppt-slide image-slide" id="slide-{{slide_number}}">
+    <div class="slide-header">
+        <h1 class="slide-title">{{IMAGE_TITLE}}</h1>
+    </div>
+    <div class="slide-content">
+        <div class="image-container">
+            <div class="main-image">
+                {{MAIN_IMAGE}}
+            </div>
+            <div class="image-caption">
+                {{IMAGE_CAPTION}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quote Slide Template -->
+<div class="ppt-slide quote-slide" id="slide-{{slide_number}}">
+    <div class="slide-header">
+        <h1 class="slide-title">{{QUOTE_TITLE}}</h1>
+    </div>
+    <div class="slide-content centered">
+        <div class="quote-container">
+            <blockquote class="main-quote">
+                {{QUOTE_TEXT}}
+            </blockquote>
+            <div class="quote-author">
+                {{QUOTE_AUTHOR}}
+            </div>
+        </div>
+    </div>
+</div>
