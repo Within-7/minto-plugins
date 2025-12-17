@@ -4,6 +4,10 @@
     "description": "Official Within7 plugin marketplace for Claude Code extensions",
     "version": "1.0.0"
   },
+  "owner": {
+    "name": "Within7",
+    "email": "www@within7.com"
+  },
   "plugins": [
     {
       "name": "md-ppt",
