@@ -1,0 +1,22 @@
+{
+  "name": "fda-main",
+  "version": "1.0.0",
+  "description": "深度整合FDA监管趋势、竞品分析及消费者洞察，提供涵盖产品设计优化、合规成本评估、健康营销策略及供应链风控的FDA全链路市场准入解决方案。",
+  "author": {
+    "name": "suya",
+    "email": "halossuya@163.com"
+  },
+  "commands": [
+    "./commands/fda.md"
+  ],
+  "agents": [
+    "./agents/产品合规分析Agent.md",
+    "./agents/供应链合规Agent.md",
+    "./agents/合规成本分析Agent.md",
+    "./agents/监管风险分析Agent.md",
+    "./agents/健康营销Agent.md",
+    "./agents/消费者健康关注Agent.md",
+    "./agents/合规竞争分析Agent.md",
+    "./agents/监管趋势Agent.md"
+  ]
+}
