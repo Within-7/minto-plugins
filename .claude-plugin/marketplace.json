@@ -32,6 +32,18 @@
       "category": "productivity",
       "tags": ["presentation", "markdown", "html", "slides"],
       "keywords": ["ppt", "presentation", "converter", "markdown", "html"]
+    },
+    {
+      "name": "simple-ppt",
+      "source": "./simple-ppt",
+      "description": "Simple Markdown to HTML PPT converter with basic design standards",
+      "version": "1.0.0",
+      "author": {
+        "name": "PPT Tools Team"
+      },
+      "category": "productivity",
+      "tags": ["presentation", "markdown", "html", "slides"],
+      "keywords": ["ppt", "presentation", "converter", "markdown", "html"]
     }
   ]
 }
