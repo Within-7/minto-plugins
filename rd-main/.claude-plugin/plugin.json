@@ -1,0 +1,22 @@
+{
+  "name": "rd-main",
+  "version": "1.0.0",
+  "description": "基于 Retail Dive 行业媒体数据，提供涵盖零售趋势、竞品策略、消费者行为及供应链管理的深度商业情报分析解决方案。",
+  "author": {
+    "name": "suya",
+    "email": "halossuya@163.com"
+  },
+  "commands": [
+    "./commands/retail.md"
+  ],
+  "agents": [
+    "./agents/零售趋势Agent.md",
+    "./agents/零售商策略Agent.md",
+    "./agents/购物行为Agent.md",
+    "./agents/零售创新Agent.md",
+    "./agents/促销策略Agent.md",
+    "./agents/零售营销Agent.md",
+    "./agents/零售合规Agent.md",
+    "./agents/库存管理Agent.md"
+  ]
+}
