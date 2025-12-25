@@ -56,6 +56,30 @@
       "category": "productivity",
       "tags": ["presentation", "markdown", "html", "slides"],
       "keywords": ["ppt", "presentation", "converter", "markdown", "html"]
+    },
+    {
+      "name": "fda-main",
+      "source": "./fda-main",
+      "description": "深度整合FDA监管趋势、竞品分析及消费者洞察，提供涵盖产品设计优化、合规成本评估、健康营销策略及供应链风控的FDA全链路市场准入解决方案。",
+      "version": "1.0.0",
+      "author": {
+        "name": "Within-7 subAgent team"
+      },
+      "category": "productivity",
+      "tags": ["fda", "regulatory", "analysis", "consumer", "insight"],
+      "keywords": ["fda", "regulatory", "analysis", "consumer", "insight"]
+    },
+    {
+      "name": "rd-main",
+      "source": "./rd-main",
+      "description": "基于 Retail Dive 行业媒体数据，提供涵盖零售趋势、竞品策略、消费者行为及供应链管理的深度商业情报分析解决方案。",
+      "version": "1.0.0",
+      "author": {
+        "name": "Within-7 subAgent team"
+      },
+      "category": "productivity",
+      "tags": ["Retail Dive", "retail", "analysis", "consumer", "insight"],
+      "keywords": ["Retail Dive", "retail", "analysis", "consumer", "insight"]
     }
   ]
 }
