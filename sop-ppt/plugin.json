@@ -1,0 +1,11 @@
+{
+  "name": "sop-ppt",
+  "version": "1.0.0",
+  "description": "McKinsey-style HTML slide generator with strict visual tokens",
+  "agents": [
+    {
+      "name": "McKinsey-Style-HTML-Slide",
+      "path": "agents/McKinsey-Style-HTML-Slide.md"
+    }
+  ]
+}
