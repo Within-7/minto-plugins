@@ -1,0 +1,15 @@
+{
+  "name": "analyst-360",
+  "description": "用于集成管理 Digital Commerce 360 数据分析的 Agent 集群，涵盖电商趋势、平台竞争、在线购物行为、电商创新、电商定价、数字营销、电商合规与电商物流等模块。",
+  "version": "1.0.0",
+  "author": {
+    "name": "Grred",
+    "email": "guohonghong@within-7.com"
+  },
+  "mcpServers": {
+    "usitc": {
+      "type": "sse",
+      "url": "http://13.58.80.11:30833/sse"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "analyst-usitc",
+  "description": "集成管理usitc数据分析Agent集群，涵盖usitc数据、公司财务、投资者情绪、行业投资、成本趋势、品牌价值、财务风险和全球供应链等专业分析模块。",
+  "version": "1.0.0",
+  "author": {
+    "name": "Grred",
+    "email": "guohonghong@within-7.com"
+  }
+}
