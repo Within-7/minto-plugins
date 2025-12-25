@@ -1,0 +1,12 @@
+{
+  "name": "sop-ppt",
+  "version": "1.0.0",
+  "description": "使用within7的风格生成HTML幻灯片",
+  "author": {
+    "name": "www within7",
+    "email": "www.within7.com"
+  },
+  "agents": [
+    "./agents/McKinsey-Style-HTML-Slide.md"
+  ]
+}
