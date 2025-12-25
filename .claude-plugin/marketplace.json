@@ -44,6 +44,18 @@
       "category": "productivity",
       "tags": ["presentation", "markdown", "html", "slides"],
       "keywords": ["ppt", "presentation", "converter", "markdown", "html"]
+    },
+    {
+      "name": "sop-ppt",
+      "source": "./sop-ppt",
+      "description": "within-7 McKinsey-style HTML slide generator with strict visual tokens",
+      "version": "1.0.0",
+      "author": {
+        "name": "Within-7 PPT Tools Team"
+      },
+      "category": "productivity",
+      "tags": ["presentation", "markdown", "html", "slides"],
+      "keywords": ["ppt", "presentation", "converter", "markdown", "html"]
     }
   ]
 }
