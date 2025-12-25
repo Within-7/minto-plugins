@@ -1,11 +1,12 @@
 {
   "name": "sop-ppt",
   "version": "1.0.0",
-  "description": "使用within7的风格生成HTML幻灯片",
+  "description": "McKinsey-style HTML slide generator with strict visual tokens",
   "author": {
-    "name": "www within7",
+    "name": "www",
     "email": "www.within7.com"
   },
+  "commands": [],
   "agents": [
     "./agents/McKinsey-Style-HTML-Slide.md"
   ]

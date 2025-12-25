@@ -1,6 +1,7 @@
 {
   "name": "sop-ppt",
+  "displayName": "sop-ppt",
   "version": "1.0.0",
   "description": "McKinsey-style HTML slide generator with strict visual tokens",
-  "author": { "name": "www" }
+  "keywords": []
 }
