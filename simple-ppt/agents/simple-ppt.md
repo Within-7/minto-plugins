@@ -159,12 +159,17 @@ color: blue
 .slide-header {
   background: #000000;
   color: #FFFFFF;
-  padding: 20px;
+  padding: 10px 20px;
+  height: 40px;
   text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .slide-content {
-  padding: 40px;
+  padding: 20px;
   background: #FFFFFF;
 }
 
@@ -173,7 +178,7 @@ color: blue
   background: #FFFFFF;
   border: 1px solid #E0E0E0;
   border-radius: 8px;
-  padding: 24px;
+  padding: 20px;
   margin: 16px 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
