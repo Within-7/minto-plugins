@@ -1,0 +1,6 @@
+{
+  "FDA": {
+    "command": "npx",
+    "args": ["@modelcontextprotocol/server-FDA", "--sse", "http://13.58.80.11:30832/sse"]
+  }
+}

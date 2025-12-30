@@ -1,0 +1,9 @@
+{
+  "name": "analyst-bloomberg",
+  "description": "集成管理 Bloomberg 数据分析 Agent 集群，涵盖市场数据、公司财务、投资者情绪、行业投资、成本趋势、品牌价值、财务风险和全球供应链等专业分析模块。",
+  "version": "1.0.0",
+  "author": {
+    "name": "Grred",
+    "email": "guohonghong@within-7.com"
+  }
+}

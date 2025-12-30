@@ -80,6 +80,25 @@
       "category": "productivity",
       "tags": ["Retail Dive", "retail", "analysis", "consumer", "insight"],
       "keywords": ["Retail Dive", "retail", "analysis", "consumer", "insight"]
+    },
+    {
+      "name": "analyst-bloomberg",
+      "description": "Bloomberg 数据分析 Agent 集群，涵盖市场数据、公司财务、投资者情绪、行业投资、成本趋势、品牌价值、财务风险和全球供应链等专业分析模块",
+      "source": "./analyst_bloomberg",
+      "category": "ecommerce"
+    },
+    {
+      "name": "analyst-360",
+      "description": "Digital Commerce 360 数据分析 Agent 集群，涵盖电商趋势、平台竞争、在线购物行为、电商创新、电商定价、数字营销、电商合规与电商物流等模块",
+      "source": "./analyst_360",
+      "category": "ecommerce"
+    },
+    {
+      "name": "analyst-usitc",
+      "description": "美国国际贸易委员会（USITC）数据分析 Agent 集群，涵盖贸易壁垒分析、反倾销分析、市场准入分析、产品合规分析、关税成本分析、原产地营销、贸易合规分析、供应链调整分析等专业分析模块",
+      "source": "./analyst_usitc",
+      "category": "ecommerce"
     }
+    
   ]
 }
