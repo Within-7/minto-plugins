@@ -98,6 +98,12 @@
       "description": "美国国际贸易委员会（USITC）数据分析 Agent 集群，涵盖贸易壁垒分析、反倾销分析、市场准入分析、产品合规分析、关税成本分析、原产地营销、贸易合规分析、供应链调整分析等专业分析模块",
       "source": "./analyst_usitc",
       "category": "ecommerce"
+    },
+    {
+      "name": "within7-ppt-sop",
+      "description": "within7公司专业生产标准HTML幻灯片工具",
+      "source": "./html-presentation-generator",
+      "category": "productivity"
     }
     
   ]
